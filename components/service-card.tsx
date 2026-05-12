@@ -1,25 +1,24 @@
-import { cn } from "@/lib/utils"
+// A reusable card component for displaying a service
+import { ReactNode } from "react"
 
 export function ServiceCard({
   title,
   description,
   icon,
-  className,
 }: {
   title: string
   description: string
-  icon: React.ReactNode
-  className?: string
+  icon: ReactNode
 }) {
   return (
-    <div
-      className={cn(
-        "rounded-lg border p-6 shadow-sm hover:shadow-md transition bg-white dark:bg-black",
-        className
-      )}
-    >
-      <div className="text-primary mb-4 text-3xl">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <div className="rounded-lg border p-6 shadow-sm bg-white dark:bg-black">
+      {/* Icon of the service */}
+      <div className="text-primary mb-4">{icon}</div>
+
+      {/* Title of the service */}
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+
+      {/* Description of the service */}
       <p className="text-muted-foreground">{description}</p>
     </div>
   )
